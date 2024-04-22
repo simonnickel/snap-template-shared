@@ -93,7 +93,7 @@ public struct AccentColorPicker: View {
 						if isSelected {
 							Circle()
 								.fill(.clear)
-								.stroke(Color.primary, lineWidth: theme.value(.strokeSelected, scaled: scaleFactor) ?? 2)
+								.stroke(Color.primary, lineWidth: theme.number(.strokeSelected, scaled: scaleFactor) ?? 2)
 						}
 					}
 					.onTapGesture {
