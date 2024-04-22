@@ -44,7 +44,7 @@ import SnapSettingsService
 		}
 		
 		return content
-			.environment(\.theme, theme)
+			.theme(apply: theme)
 			.environment(\.serviceSettings, settings)
 			.environment(\.templateState, templateState)
 			.environment(\.templateStateBinding, Binding(get: {

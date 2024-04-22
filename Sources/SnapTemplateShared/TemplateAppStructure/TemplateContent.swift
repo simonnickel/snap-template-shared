@@ -53,7 +53,6 @@ public struct TemplateContent: View {
 			.preferredColorScheme(colorScheme)
 			
 		})
-		.theme(tint: .accentColor)
 		
 	}
 	
