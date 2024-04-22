@@ -58,19 +58,19 @@ public struct AccentColorPicker: View {
 				.init(base: .systemPinkAdjusted),
 //				.init(base: .systemBrownAdjusted)
 			], [
-				.init(base: .systemRedAdjusted, complimentary: .systemRedComplimentary, complementary: .systemRedComplementary),
-				.init(base: .systemOrangeAdjusted, complimentary: .systemOrangeComplimentary, complementary: .systemOrangeComplementary),
-				.init(base: .systemYellowAdjusted, complimentary: .systemYellowComplimentary, complementary: .systemYellowComplementary),
-				.init(base: .systemGreenAdjusted, complimentary: .systemGreenComplimentary, complementary: .systemGreenComplementary),
-				.init(base: .systemMintAdjusted, complimentary: .systemMintComplimentary, complementary: .systemMintComplementary),
-				.init(base: .systemTealAdjusted, complimentary: .systemTealComplimentary, complementary: .systemTealComplementary),
-				.init(base: .systemCyanAdjusted, complimentary: .systemCyanComplimentary, complementary: .systemCyanComplementary),
-				.init(base: .systemBlueAdjusted, complimentary: .systemBlueComplimentary, complementary: .systemBlueComplementary),
-				.init(base: .systemIndigoAdjusted, complimentary: .systemIndigoComplimentary, complementary: .systemIndigoComplementary),
-				.init(base: .systemPurpleAdjusted, complimentary: .systemPurpleComplimentary, complementary: .systemPurpleComplementary),
-				.init(base: .systemPinkAdjusted, complimentary: .systemPinkComplimentary, complementary: .systemPinkComplementary),
-//				.init(base: .systemBrownAdjusted, complimentary: .systemBrownComplimentary, complementary: .systemBrownComplementary)
-			]
+				Theme.ColorKey.systemColorSet(for: .red),
+				Theme.ColorKey.systemColorSet(for: .orange),
+				Theme.ColorKey.systemColorSet(for: .yellow),
+				Theme.ColorKey.systemColorSet(for: .green),
+				Theme.ColorKey.systemColorSet(for: .mint),
+				Theme.ColorKey.systemColorSet(for: .teal),
+				Theme.ColorKey.systemColorSet(for: .cyan),
+				Theme.ColorKey.systemColorSet(for: .blue),
+				Theme.ColorKey.systemColorSet(for: .indigo),
+				Theme.ColorKey.systemColorSet(for: .purple),
+				Theme.ColorKey.systemColorSet(for: .pink),
+//				Theme.ColorKey.systemColorSet(for: .brown),
+			].compactMap({$0})
 		]
 		
 		ForEach(colorSetSets, id: \.self) { colorSets in
