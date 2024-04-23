@@ -20,7 +20,7 @@ extension ConfigureTabsScreen {
 		let defaultConfiguration: TabConfiguration
 		
 		public var body: some View {
-			// TODO: Picker text style does not match.
+			// TODO FB12181540: Should be able to apply color and font to Picker.
 			PickerTapable(selection: $selected) {
 				ForEach(options) { tab in
 					ThemeLabel(text: tab.name, icon: tab.icon)
