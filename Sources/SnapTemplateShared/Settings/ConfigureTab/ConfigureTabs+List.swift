@@ -32,7 +32,6 @@ extension ConfigureTabsScreen {
 							tabsSetting: tabsSetting,
 							defaultConfiguration: defaultConfiguration
 						)
-						.themeListRow()
 					}
 					.onMove { from, to in
 						var tabs = tabs

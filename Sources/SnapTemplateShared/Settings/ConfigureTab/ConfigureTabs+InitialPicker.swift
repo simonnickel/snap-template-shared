@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SnapCore
 import SnapSettingsService
 import SnapTheme
 
@@ -19,14 +20,15 @@ extension ConfigureTabsScreen {
 		let defaultConfiguration: TabConfiguration
 		
 		public var body: some View {
-			Picker(selection: $selected) {
+			// TODO: Picker text style does not match.
+			PickerTapable(selection: $selected) {
 				ForEach(options) { tab in
 					ThemeLabel(text: tab.name, icon: tab.icon)
 						.tag(tab)
 				}
 			} label: {
 				// TODO Localization
-				ThemeLabel(text: "Initial Tab")
+				ThemeLabel(text: "Initial Tab", style: .themeListRow())
 			}
 			.onChange(of: selected) { oldValue, newValue in
 				let configuration = tabsSetting.value ?? defaultConfiguration

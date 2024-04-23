@@ -26,11 +26,11 @@ extension ConfigureTabsScreen {
 			
 			Group {
 				if isRequired {
-					ThemeLabel(text: tab.name, icon: tab.icon)
+					ThemeLabel(text: tab.name, icon: tab.icon, style: .themeListRow())
 				} else {
 					// TODO: Haptic Feedback on label tap
 					ToggleTapable(isOn: $isOn) {
-						ThemeLabel(text: tab.name, icon: tab.icon)
+						ThemeLabel(text: tab.name, icon: tab.icon, style: .themeListRow())
 					}
 				}
 			}
