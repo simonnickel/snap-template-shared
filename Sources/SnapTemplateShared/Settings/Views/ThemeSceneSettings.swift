@@ -26,9 +26,9 @@ public struct ThemeSceneSettings<Content>: View where Content : View {
 	public var body: some View {
 		
 #if !os(macOS)
-		ThemeSceneList(title: title, titleMode: .inline, listStyle: .insetGrouped, content: content)
+		ThemeScreenList(title: title, titleMode: .inline, listStyle: .insetGrouped, content: content)
 #else
-		ThemeSceneSidebar(title: title, collapsed: false, content: content)
+		ThemeScreenSidebar(title: title, collapsed: false, content: content)
 #endif
 
 	}

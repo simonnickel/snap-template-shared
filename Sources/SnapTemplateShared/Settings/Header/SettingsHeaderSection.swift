@@ -32,14 +32,14 @@ public struct SettingsHeaderSection: View {
 						Text("Hey 👋,")
 						Text(name)
 					}
-					.theme(text: .sceneHeaderSubtitle)
+					.theme(text: .screenHeaderSubtitle)
 				}
 				Text(text)
 					.theme(text: .textBlock)
 			}
 			.listRowInsets(.zero)
 #if !os(macOS)
-			.theme(listRowBackground: .scene)
+			.theme(listRowBackground: .screen)
 #endif
 		}
 	}
