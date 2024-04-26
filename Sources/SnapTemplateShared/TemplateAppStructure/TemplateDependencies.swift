@@ -42,6 +42,7 @@ import SnapSettingsService
 		} else if let color = theme.systemColor(for: .accentColorBase)?.value {
 			theme = theme.replaceAccent(base: color)
 		}
+		templateState.theme = theme
 		
 		return content
 			.theme(apply: theme)
