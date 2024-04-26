@@ -22,7 +22,7 @@ public struct SettingsRow<Content: View>: View {
 #if os(macOS)
 		
 		content()
-			.themeListRow(applyBackgroundColor: false)
+			.themeListRow()
 		
 #else
 		
@@ -36,7 +36,7 @@ public struct SettingsRow<Content: View>: View {
 			content()
 			
 		}
-		.themeListRow(applyBackgroundColor: false)
+		.themeListRow()
 		
 #endif
 	}

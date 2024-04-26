@@ -30,6 +30,7 @@ extension ConfigureTabsScreen {
 				// TODO Localization
 				ThemeLabel(text: "Initial Tab", style: .themeListRow())
 			}
+			.themeListRow()
 			.onChange(of: selected) { oldValue, newValue in
 				let configuration = tabsSetting.value ?? defaultConfiguration
 				tabsSetting.set(configuration.updated(initial: newValue))

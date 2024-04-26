@@ -37,6 +37,7 @@ extension ConfigureTabsScreen {
 			.if(!isVisibleInTabBar) { view in
 				view.theme(color: .foregroundDisabled)
 			}
+			.themeListRow()
 			.onChange(of: isOn) { oldValue, newValue in
 				let configuration = tabsSetting.value?.updated(withDefaults: defaultConfiguration) ?? defaultConfiguration
 				var disabled = configuration.disabled
