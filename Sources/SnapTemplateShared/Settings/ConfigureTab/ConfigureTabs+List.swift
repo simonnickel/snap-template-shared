@@ -42,7 +42,7 @@ extension ConfigureTabsScreen {
 					}
 				} footer: {
 					// TODO Localization
-					ThemeLabel(text: "First 5 tabs are displayed.")
+					ThemeLabel(text: "First 5 tabs are displayed.", style: .themeSectionFooter)
 				}
 				
 				Section {
