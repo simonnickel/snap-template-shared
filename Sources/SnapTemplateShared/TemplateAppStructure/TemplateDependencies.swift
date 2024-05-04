@@ -21,6 +21,7 @@ import SnapSettingsService
 		
 		self.templateState = templateState
 		setupDisplayMode()
+		setupInterfaceScale()
 		setupNavigationLayout()
 		setupAccentColor()
 		
@@ -33,6 +34,7 @@ import SnapSettingsService
 	public func apply<Content: View>(on content: Content) -> some View {
 		
 		var theme = templateState.theme
+		
 		if let accentColorSelected = templateState.accentColor {
 			theme = theme.replacingValues(
 				colors: [
@@ -42,6 +44,12 @@ import SnapSettingsService
 		} else if let color = theme.systemColor(for: .accentColorBase)?.value {
 			theme = theme.replaceAccent(base: color)
 		}
+		if let interfaceScale = templateState.interfaceScale {
+			theme = theme.replacingValues(
+				scale: theme.number(interfaceScale.scale)
+			)
+		}
+		
 		templateState.theme = theme
 		
 		return content
@@ -70,6 +78,19 @@ import SnapSettingsService
 			.withWeak(self)
 			.sink { weakSelf, value in
 				weakSelf.templateState.displayMode = value
+			}
+			.store(in: &subscriptions)
+	}
+	
+	
+	// MARK: InterfaceScale
+	
+	private func setupInterfaceScale() {
+		// Apply change of settings to state. Handle Remote change. Also sets initial value.
+		settings.publisher(.interfaceScale)
+			.withWeak(self)
+			.sink { weakSelf, value in
+				weakSelf.templateState.interfaceScale = value
 			}
 			.store(in: &subscriptions)
 	}
