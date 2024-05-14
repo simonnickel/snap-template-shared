@@ -28,7 +28,7 @@ import SnapSettingsService
 		setupInterfaceScale()
 		setupNavigationLayout()
 		setupAccentColor()
-		
+		applyAccentColor()
 	}
 	
 	
@@ -37,6 +37,29 @@ import SnapSettingsService
 	/// Apply dependencies defined in template.
 	public func apply<Content: View>(on content: Content) -> any View {
 		
+		applyAccentColor()
+		
+		return content
+			.theme(apply: theme)
+			.environment(\.serviceSettings, settings)
+			.environment(\.templateState, templateState)
+			.environment(\.templateStateBinding, Binding(get: {
+				self.templateState
+			}, set: { newValue in
+				self.templateState = newValue
+			}))
+			.preferredColorScheme(templateState.displayMode?.colorScheme)
+	}
+
+	
+	// MARK: - Settings Updates
+	
+	@ObservationIgnored private var subscriptions: [AnyCancellable] = []
+	
+	
+	// MARK: AccentColor
+	
+	private func applyAccentColor() {
 		var theme = self.theme
 		
 		if let accentColorSelected = templateState.accentColor {
@@ -55,23 +78,7 @@ import SnapSettingsService
 		}
 
 		self.theme = theme
-		
-		return content
-			.theme(apply: theme)
-			.environment(\.serviceSettings, settings)
-			.environment(\.templateState, templateState)
-			.environment(\.templateStateBinding, Binding(get: {
-				self.templateState
-			}, set: { newValue in
-				self.templateState = newValue
-			}))
-			.preferredColorScheme(templateState.displayMode?.colorScheme)
 	}
-
-	
-	// MARK: - Settings Updates
-	
-	@ObservationIgnored private var subscriptions: [AnyCancellable] = []
 	
 	
 	// MARK: DisplayMode
