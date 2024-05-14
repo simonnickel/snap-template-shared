@@ -10,17 +10,13 @@ import SnapTheme
 
 public struct TemplateState {
 	
-	public init(theme: Theme = .base, showSettings: Bool = false, displayMode: DisplayMode? = nil, interfaceScale: InterfaceScale? = nil, navigationLayout: NavigationLayout? = nil, accentColor: Theme.ColorSet? = nil) {
-		self.theme = theme
+	public init(showSettings: Bool = false, displayMode: DisplayMode? = nil, interfaceScale: InterfaceScale? = nil, navigationLayout: NavigationLayout? = nil, accentColor: Theme.ColorSet? = nil) {
 		self.showSettings = showSettings
 		self.displayMode = displayMode
 		self.interfaceScale = interfaceScale
 		self.navigationLayout = navigationLayout
 		self.accentColor = accentColor
 	}
-	
-	/// The `Theme` applied to the AppContainer.
-	public var theme: Theme
 	
 	/// Controls display of the settings sheet.
 	public var showSettings: Bool

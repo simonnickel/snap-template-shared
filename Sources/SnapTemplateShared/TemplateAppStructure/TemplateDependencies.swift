@@ -14,11 +14,16 @@ import SnapSettingsService
 	
 	public var templateState: TemplateState
 	
+	/// The `Theme` applied to the AppContainer.
+	/// Not in TemplateState although it will change. It should not be observed, is accessible via Environment instead.
+	@ObservationIgnored public var theme: Theme
+	
 	@ObservationIgnored let settings: SettingsService = SettingsService()
 	
-	public init(templateState: TemplateState = TemplateState()) {
+	public init(templateState: TemplateState = TemplateState(), theme: Theme = .base) {
 		
 		self.templateState = templateState
+		self.theme = theme
 		setupDisplayMode()
 		setupInterfaceScale()
 		setupNavigationLayout()
@@ -32,7 +37,7 @@ import SnapSettingsService
 	/// Apply dependencies defined in template.
 	public func apply<Content: View>(on content: Content) -> any View {
 		
-		var theme = templateState.theme
+		var theme = self.theme
 		
 		if let accentColorSelected = templateState.accentColor {
 			theme = theme.replacingValues(
@@ -48,8 +53,8 @@ import SnapSettingsService
 				scale: theme.number(interfaceScale.scale)
 			)
 		}
-		
-		templateState.theme = theme
+
+		self.theme = theme
 		
 		return content
 			.theme(apply: theme)
