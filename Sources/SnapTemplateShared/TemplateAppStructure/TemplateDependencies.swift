@@ -10,7 +10,7 @@ import Combine
 import SnapTheme
 import SnapSettingsService
 
-@Observable public class TemplateDependencies {
+@Observable public class TemplateDependencies: Dependencies {
 	
 	public var templateState: TemplateState
 	
@@ -30,7 +30,7 @@ import SnapSettingsService
 	// MARK: - Apply
 	
 	/// Apply dependencies defined in template.
-	public func apply<Content: View>(on content: Content) -> some View {
+	public func apply<Content: View>(on content: Content) -> any View {
 		
 		var theme = templateState.theme
 		
