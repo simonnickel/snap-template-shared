@@ -75,8 +75,21 @@ import SnapSettingsService
 			.withWeak(self)
 			.sink { weakSelf, value in
 				weakSelf.templateState.interfaceScale = value
+				weakSelf.applyInterfaceScale()
 			}
 			.store(in: &subscriptions)
+	}
+	
+	private func applyInterfaceScale() {
+		var theme = self.theme
+		
+		if let interfaceScale = templateState.interfaceScale {
+			theme = theme.replacingValues(
+				scale: theme.number(interfaceScale.scale)
+			)
+		}
+
+		self.theme = theme
 	}
 	
 	
@@ -117,11 +130,6 @@ import SnapSettingsService
 			)
 		} else if let color = theme.systemColor(for: .accentColorBase)?.value {
 			theme = theme.replaceAccent(base: color)
-		}
-		if let interfaceScale = templateState.interfaceScale {
-			theme = theme.replacingValues(
-				scale: theme.number(interfaceScale.scale)
-			)
 		}
 
 		self.theme = theme
