@@ -28,7 +28,6 @@ import SnapSettingsService
 		setupInterfaceScale()
 		setupNavigationLayout()
 		setupAccentColor()
-		applyAccentColor()
 	}
 	
 	
@@ -36,8 +35,6 @@ import SnapSettingsService
 	
 	/// Apply dependencies defined in template.
 	public func apply<Content: View>(on content: Content) -> any View {
-		
-		applyAccentColor()
 		
 		return content
 			.theme(apply: theme)
@@ -55,30 +52,6 @@ import SnapSettingsService
 	// MARK: - Settings Updates
 	
 	@ObservationIgnored private var subscriptions: [AnyCancellable] = []
-	
-	
-	// MARK: AccentColor
-	
-	private func applyAccentColor() {
-		var theme = self.theme
-		
-		if let accentColorSelected = templateState.accentColor {
-			theme = theme.replacingValues(
-				colors: [
-					.accentColors : .colorSet(accentColorSelected.base, complimentary: accentColorSelected.complimentary, complementary: accentColorSelected.complementary)
-				]
-			)
-		} else if let color = theme.systemColor(for: .accentColorBase)?.value {
-			theme = theme.replaceAccent(base: color)
-		}
-		if let interfaceScale = templateState.interfaceScale {
-			theme = theme.replacingValues(
-				scale: theme.number(interfaceScale.scale)
-			)
-		}
-
-		self.theme = theme
-	}
 	
 	
 	// MARK: DisplayMode
@@ -128,8 +101,30 @@ import SnapSettingsService
 			.withWeak(self)
 			.sink { weakSelf, value in
 				weakSelf.templateState.accentColor = value
+				weakSelf.applyAccentColor()
 			}
 			.store(in: &subscriptions)
+	}
+	
+	private func applyAccentColor() {
+		var theme = self.theme
+		
+		if let accentColorSelected = templateState.accentColor {
+			theme = theme.replacingValues(
+				colors: [
+					.accentColors : .colorSet(accentColorSelected.base, complimentary: accentColorSelected.complimentary, complementary: accentColorSelected.complementary)
+				]
+			)
+		} else if let color = theme.systemColor(for: .accentColorBase)?.value {
+			theme = theme.replaceAccent(base: color)
+		}
+		if let interfaceScale = templateState.interfaceScale {
+			theme = theme.replacingValues(
+				scale: theme.number(interfaceScale.scale)
+			)
+		}
+
+		self.theme = theme
 	}
 	
 }
