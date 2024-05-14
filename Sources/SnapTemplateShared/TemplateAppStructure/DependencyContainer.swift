@@ -10,6 +10,7 @@ import SnapTheme
 
 public protocol Dependencies {
 	
+	@MainActor
 	func apply<Content: View>(on content: Content) -> any View
 	
 }

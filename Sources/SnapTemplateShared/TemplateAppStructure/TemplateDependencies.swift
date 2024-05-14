@@ -34,6 +34,7 @@ import SnapSettingsService
 	// MARK: - Apply
 	
 	/// Apply dependencies defined in template.
+	@MainActor
 	public func apply<Content: View>(on content: Content) -> any View {
 		
 		return content
