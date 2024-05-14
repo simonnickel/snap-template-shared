@@ -16,7 +16,6 @@ extension ConfigureTabsScreen {
 		let tabsSetting: SettingsService.Value<TabConfiguration?>
 		let defaultConfiguration: TabConfiguration
 		
-		@MainActor
 		private var tabs: [TabConfiguration.Tab] {
 			let configuration = tabsSetting.value?.updated(withDefaults: defaultConfiguration) ?? defaultConfiguration
 			return configuration.tabs
