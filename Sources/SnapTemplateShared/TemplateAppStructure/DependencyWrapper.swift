@@ -26,12 +26,12 @@ public struct DependencyWrapper<Content: View>: View {
 	
 	/// The `DependencyWrapper` applies dependencies on the `Content`.
 	/// - Parameters:
-	///   - dependenciesApp: `AppDependencies` should be owned outside of the View.
-	///   - dependenciesTemplate: `TemplateDependencies` should be owned outside of the View.
+	///   - app: `DependencyContainer` of the apps dependencies.
+	///   - template: `DependencyContainer` of the template dependencies.
 	///   - content: Closure that builds the content to apply the dependencies on.
-	public init(dependencies: DependencyContainer, dependenciesTemplate: DependencyContainer, @ViewBuilder content: @escaping () -> Content) {
-		self.dependenciesApp = dependencies
-		self.dependenciesTemplate = dependenciesTemplate
+	public init(app: DependencyContainer, template: DependencyContainer, @ViewBuilder content: @escaping () -> Content) {
+		self.dependenciesApp = app
+		self.dependenciesTemplate = template
 		self.content = content
 	}
 	
