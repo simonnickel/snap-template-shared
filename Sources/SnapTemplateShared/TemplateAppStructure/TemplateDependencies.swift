@@ -10,7 +10,7 @@ import Combine
 import SnapTheme
 import SnapSettingsService
 
-@Observable public class TemplateDependencies: Dependencies {
+@Observable public class TemplateDependencies: DependencyContainer {
 	
 	public var templateState: TemplateState
 	
