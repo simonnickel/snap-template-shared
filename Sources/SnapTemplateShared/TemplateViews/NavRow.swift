@@ -1,5 +1,5 @@
 //
-//  NavItemRow.swift
+//  NavRow.swift
 //  SnapTemplateShared
 //
 //  Created by Simon Nickel on 30.04.24.
@@ -8,9 +8,9 @@
 import SwiftUI
 import SnapTheme
 
-public struct NavItemRow<P>: View where P : Decodable, P : Encodable, P : Hashable {
+public struct NavRow<Value>: View where Value : Decodable, Value : Encodable, Value : Hashable {
 	
-	public init(value: P, title: String?, icon: Theme.IconKey?, inSidebar: Bool, isSelected: Bool) {
+	public init(value: Value, title: String?, icon: Theme.IconKey?, inSidebar: Bool, isSelected: Bool) {
 		self.value = value
 		self.title = title
 		self.icon = icon
@@ -18,7 +18,7 @@ public struct NavItemRow<P>: View where P : Decodable, P : Encodable, P : Hashab
 		self.isSelected = isSelected
 	}
 	
-	let value: P
+	let value: Value
 	let title: String?
 	let icon: Theme.IconKey?
 	let inSidebar: Bool
@@ -65,15 +65,15 @@ public struct NavItemRow<P>: View where P : Decodable, P : Encodable, P : Hashab
 		
 		Section {
 			
-			NavItemRow(value: NavItem.itemA, title: "Item A", icon: .favorite, inSidebar: true, isSelected: false)
-			NavItemRow(value: NavItem.itemA, title: "Item A", icon: .favorite, inSidebar: true, isSelected: true)
+			NavRow(value: NavItem.itemA, title: "Item A", icon: .favorite, inSidebar: true, isSelected: false)
+			NavRow(value: NavItem.itemA, title: "Item A", icon: .favorite, inSidebar: true, isSelected: true)
 			
-			NavItemRow(value: NavItem.itemA, title: "Item A", icon: .favorite, inSidebar: false, isSelected: false)
-			NavItemRow(value: NavItem.itemA, title: "Item A", icon: .favorite, inSidebar: false, isSelected: true)
+			NavRow(value: NavItem.itemA, title: "Item A", icon: .favorite, inSidebar: false, isSelected: false)
+			NavRow(value: NavItem.itemA, title: "Item A", icon: .favorite, inSidebar: false, isSelected: true)
 			
 		} header: {
 			ThemeSectionHeaderContainer {
-				ThemeLabel(text: "NavItemRow", style: .themeSectionHeader(prominent: true))
+				ThemeLabel(text: "NavRow", style: .themeSectionHeader(prominent: true))
 			}
 		}
 		
