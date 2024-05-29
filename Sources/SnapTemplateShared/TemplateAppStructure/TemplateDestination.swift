@@ -9,7 +9,7 @@ import SwiftUI
 import SnapTheme
 import SnapMatchingNavigation
 
-public protocol TemplateDestination: MNavItem {
+public protocol TemplateDestination: MNavItem, Hashable {
 	
 	var title: String? { get }
 	
