@@ -22,6 +22,7 @@ public extension TemplateDestination {
 	
 	// MARK: MNavItem
 	
+	@MainActor
 	var tabItem: any View {
 		ThemeTabItem(text: title, icon: icon)
 	}
