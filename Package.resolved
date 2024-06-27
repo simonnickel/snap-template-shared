@@ -1,5 +1,5 @@
 {
-  "originHash" : "06483b2527e5694218410b7061aa9a786828bf1e523beeb27d1819934eb263da",
+  "originHash" : "857b2843b5df76bf61b460335ec70ec753f6586fbf11a716de956765a6d05f3e",
   "pins" : [
     {
       "identity" : "snap-core",
@@ -16,7 +16,7 @@
       "location" : "https://github.com/simonnickel/snap-matching-navigation.git",
       "state" : {
         "branch" : "main-xc16",
-        "revision" : "20c5bbeb88a551557385b8c5c9bd6f43692b8ebb"
+        "revision" : "09c6c24a0f44323dcbba49ab5cea92e845f829c2"
       }
     },
     {
