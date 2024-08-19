@@ -34,10 +34,6 @@ let package = Package(
 				.product(name: "SnapMatchingNavigation", package: "snap-matching-navigation"),
 			]
 		),
-        .testTarget(
-            name: "SnapTemplateSharedTests",
-            dependencies: ["SnapTemplateShared"]
-		),
     ],
     swiftLanguageModes: [.version("6")]
 )
