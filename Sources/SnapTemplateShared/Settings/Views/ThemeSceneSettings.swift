@@ -1,8 +1,6 @@
 //
-//  ThemeSceneSettings.swift
-//  SnapTemplateShared
-//
-//  Created by Simon Nickel on 01.11.23.
+//  SNAP - https://github.com/simonnickel/snap
+//  Created by Simon Nickel
 //
 
 import SwiftUI

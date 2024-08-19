@@ -1,8 +1,6 @@
 //
-//  ConfigureTabs+List.swift
-//  SnapTemplateShared
-//
-//  Created by Simon Nickel on 11.10.23.
+//  SNAP - https://github.com/simonnickel/snap
+//  Created by Simon Nickel
 //
 
 import SwiftUI
