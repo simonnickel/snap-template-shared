@@ -39,5 +39,5 @@ let package = Package(
             dependencies: ["SnapTemplateShared"]
 		),
     ],
-	swiftLanguageVersions: [.version("6")]
+    swiftLanguageModes: [.version("6")]
 )
