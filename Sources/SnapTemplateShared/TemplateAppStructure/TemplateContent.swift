@@ -1,8 +1,6 @@
 //
-//  TemplateContent.swift
-//  SnapTemplateShared
-//
-//  Created by Simon Nickel on 29.09.23.
+//  SNAP - https://github.com/simonnickel/snap
+//  Created by Simon Nickel
 //
 
 import SwiftUI

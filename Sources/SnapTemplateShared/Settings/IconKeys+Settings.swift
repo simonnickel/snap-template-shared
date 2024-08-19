@@ -1,8 +1,6 @@
 //
-//  IconKeys+Settings.swift
-//	SnapTemplateShared
-//
-//  Created by Simon Nickel on 19.01.24.
+//  SNAP - https://github.com/simonnickel/snap
+//  Created by Simon Nickel
 //
 
 import SnapTheme

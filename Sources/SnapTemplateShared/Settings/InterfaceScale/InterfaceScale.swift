@@ -1,8 +1,6 @@
 //
-//  InterfaceScale.swift
-//  SnapTemplateShared
-//
-//  Created by Simon Nickel on 04.05.24.
+//  SNAP - https://github.com/simonnickel/snap
+//  Created by Simon Nickel
 //
 
 import SnapTheme
