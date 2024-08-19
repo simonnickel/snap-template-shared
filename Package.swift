@@ -21,6 +21,7 @@ let package = Package(
 		.package(url: "https://github.com/simonnickel/snap-theme.git", branch: "main-xc16"),
 		.package(url: "https://github.com/simonnickel/snap-settings-service.git", branch: "main-xc16"),
 		.package(url: "https://github.com/simonnickel/snap-matching-navigation.git", branch: "main-xc16"),
+        // TODO: Revert back to main
 	],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
