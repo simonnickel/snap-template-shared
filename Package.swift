@@ -17,11 +17,10 @@ let package = Package(
     ],
 	dependencies: [
 		// Dependencies declare other packages that this package depends on.
-		.package(url: "https://github.com/simonnickel/snap-core.git", branch: "main-xc16"),
-		.package(url: "https://github.com/simonnickel/snap-theme.git", branch: "main-xc16"),
-		.package(url: "https://github.com/simonnickel/snap-settings-service.git", branch: "main-xc16"),
-		.package(url: "https://github.com/simonnickel/snap-matching-navigation.git", branch: "main-xc16"),
-        // TODO: Revert back to main
+		.package(url: "https://github.com/simonnickel/snap-core.git", branch: "main"),
+		.package(url: "https://github.com/simonnickel/snap-theme.git", branch: "main"),
+		.package(url: "https://github.com/simonnickel/snap-settings-service.git", branch: "main"),
+		.package(url: "https://github.com/simonnickel/snap-matching-navigation.git", branch: "main"),
 	],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
