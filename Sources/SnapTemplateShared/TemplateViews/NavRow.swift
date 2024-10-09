@@ -33,7 +33,8 @@ public struct NavRow<Value>: View where Value : Decodable, Value : Encodable, Va
 					text: title,
 					icon: icon
 				)
-					.labelStyle(.themeSidebar(isSelected: isSelected))
+				// TODO: iOS 18 - sidebar styling changed
+//					.labelStyle(.themeSidebar(isSelected: isSelected))
 			}
 			
 		} else {

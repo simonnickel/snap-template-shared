@@ -1,5 +1,5 @@
 {
-  "originHash" : "d62ffa7ca213d01031f0b14df49dbc6a17aad3a670d54e1ba0787fcfa69a3578",
+  "originHash" : "dc26595646ff6e99b097a5e40ed93604a6c44d18ed84ef74fb8449616a0e73dc",
   "pins" : [
     {
       "identity" : "snap-core",
@@ -7,7 +7,7 @@
       "location" : "https://github.com/simonnickel/snap-core.git",
       "state" : {
         "branch" : "main",
-        "revision" : "0efa53a390859af07b491be4045257f9a9da77e1"
+        "revision" : "87337c88da2fda8ff9e8b57fe7b84acaa3555a98"
       }
     },
     {
@@ -16,7 +16,7 @@
       "location" : "https://github.com/simonnickel/snap-matching-navigation.git",
       "state" : {
         "branch" : "main",
-        "revision" : "2aa5f7e3133aaef8ec5f58ac35b5c757f6696ce5"
+        "revision" : "84cecc1b825d8d4a058fe9eb3e40bf6ebee63ce5"
       }
     },
     {
@@ -25,7 +25,7 @@
       "location" : "https://github.com/simonnickel/snap-settings-service.git",
       "state" : {
         "branch" : "main",
-        "revision" : "d95d2df2a95e3dbbbcb007ea228845707968e0af"
+        "revision" : "e2234e0f6172aa9a0317045ab1f1c0df3d6ee873"
       }
     },
     {
@@ -34,7 +34,7 @@
       "location" : "https://github.com/simonnickel/snap-theme.git",
       "state" : {
         "branch" : "main",
-        "revision" : "f3cfe144e4e1aa2f740025f447ef36195b18f32e"
+        "revision" : "ba7ad58f1ff3a88a42fe13e3a112d6d8afcf13fa"
       }
     }
   ],

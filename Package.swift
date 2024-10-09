@@ -1,4 +1,4 @@
-// swift-tools-version: 5.10
+// swift-tools-version: 6.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "snap-template-shared",
 	platforms: [
-		.iOS(.v17), .macOS(.v14)
+		.iOS(.v18), .macOS(.v15)
 	],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
@@ -32,14 +32,8 @@ let package = Package(
 				.product(name: "SnapTheme", package: "snap-theme"),
 				.product(name: "SnapSettingsService", package: "snap-settings-service"),
 				.product(name: "SnapMatchingNavigation", package: "snap-matching-navigation"),
-			],
-			swiftSettings: [
-				.enableExperimentalFeature("StrictConcurrency")
 			]
 		),
-        .testTarget(
-            name: "SnapTemplateSharedTests",
-            dependencies: ["SnapTemplateShared"]
-		),
-    ]
+    ],
+    swiftLanguageModes: [.version("6")]
 )
