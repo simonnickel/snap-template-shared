@@ -8,20 +8,25 @@ import SnapTheme
 
 public struct ToolbarButtonSettings: View {
 	
-	@Environment(\.templateStateBinding) private var templateStateBinding
+	public typealias Action = () -> Void
+	private let action: Action
 	
-	public init() { }
+	public init(action: @escaping Action) {
+		self.action = action
+	}
 	
 	public var body: some View {
 		
 		Button {
-			templateStateBinding.showSettings.wrappedValue.toggle()
+			action()
 		} label: {
 			ThemeLabel(
 				text: "Settings",
 				icon: .settings
 			)
 		}
+		.buttonStyle(.themeSidebarBottom)
+		.theme(padding: .spacingSections, .horizontal)
 
 	}
 	
