@@ -6,10 +6,11 @@
 import SwiftUI
 import SnapTheme
 import SnapSettingsService
+import SnapDependencies
 
 public struct ConfigureTabsScreen: View {
 	
-	@Environment(\.serviceSettings) private var settings
+	@Dependency private var settings: SettingsService
 
 	private let defaultConfiguration: TabConfiguration
 

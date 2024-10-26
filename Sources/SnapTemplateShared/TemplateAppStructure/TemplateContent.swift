@@ -5,14 +5,19 @@
 
 import SwiftUI
 import SnapNavigation
+import SnapDependencies
+import SnapTheme
 	
 public struct TemplateContent<NavigationProvider: SnapNavigationProvider>: View {
 	
-	private let navigator: SnapNavigation.Navigator<NavigationProvider>
+	typealias Navigator = SnapNavigation.Navigator<NavigationProvider>
+	
+	@Dependency private var navigator: Navigator
+	@Dependency private var templateState: TemplateState
+	
 	private let settingsScreen: NavigationProvider.Screen
 	
-	public init(provider: NavigationProvider, settingsScreen: NavigationProvider.Screen) {
-		self.navigator = SnapNavigation.Navigator(provider: provider)
+	public init(settingsScreen: NavigationProvider.Screen) {
 		self.settingsScreen = settingsScreen
 	}
 	
@@ -31,6 +36,11 @@ public struct TemplateContent<NavigationProvider: SnapNavigationProvider>: View 
 			}
 		}
 #endif
+		.theme(apply: templateState.theme) // TODO: Check if updates are propagated.
+		.preferredColorScheme(templateState.displayMode?.colorScheme)
+//		.onChange(of: templateState.displayMode) { oldValue, newValue in
+//			
+//		}
 		
 	}
 	
