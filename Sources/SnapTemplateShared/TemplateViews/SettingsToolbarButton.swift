@@ -26,6 +26,7 @@ public struct ToolbarButtonSettings: View {
 			)
 		}
 		.buttonStyle(.themeSidebarBottom)
+		.theme(padding: .spacingSections, .horizontal)
 
 	}
 	
