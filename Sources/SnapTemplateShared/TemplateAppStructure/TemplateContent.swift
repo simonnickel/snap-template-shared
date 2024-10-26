@@ -4,53 +4,32 @@
 //
 
 import SwiftUI
-import SnapTheme
-import SnapSettingsService
-import SnapMatchingNavigation
+import SnapNavigation
 	
-public struct TemplateContent: View {
+public struct TemplateContent<NavigationProvider: SnapNavigationProvider>: View {
 	
-	@Environment(\.templateStateBinding) private var templateStateBinding
+	private let provider: NavigationProvider
 	
-	@Environment(\.serviceSettings) private var settings
-	
-	// TODO FB13214002: SwiftUI: Setting PreferredColorScheme to nil does not work in sheet.
-	@Environment(\.colorScheme) private var colorScheme
-	
-	@ViewBuilder private let splitScene: () -> any View
-	@ViewBuilder private let tabScene: (_ settings: SettingsService) -> any View
-	@ViewBuilder private let settingsScene: () -> any View
-
-	public init(splitScene: @escaping () -> any View, tabScene: @escaping (SettingsService) -> any View, settingsScene: @escaping () -> any View) {
-		self.splitScene = splitScene
-		self.tabScene = tabScene
-		self.settingsScene = settingsScene
+	public init(provider: NavigationProvider) {
+		self.provider = provider
 	}
 	
 	public var body: some View {
 		
-		Group {
-			switch templateStateBinding.navigationLayout.wrappedValue ?? .automatic {
-					
-				case .automatic: MNavContainer(splitScene: splitScene, tabScene: { tabScene(settings) })
-					
-				case .sidebar: AnyView(splitScene()) // TODO: Sidebar on iPhone needs title
-					
-				case .tab: AnyView(tabScene(settings))
-					
+		SnapNavigationView(
+			provider: provider
+		)
+#if !os(macOS) // macOS settings are available in the application menu.
+		.tabViewSidebarBottomBar {
+			HStack {
+				// TODO: Needs to be inside of SnapNavigationView to have access to Navigator.
+//				ToolbarButtonSettings {
+//					navigator.present(screen: .settings)
+//				}
+				Spacer()
 			}
 		}
-		.modalPresentation(style: .sheet, isPresented: templateStateBinding.showSettings, content: {
-			
-			ThemeCloseContainer() {
-				AnyView(settingsScene())
-			}
-			.themeModal(detents: [.large])
-			// TODO FB13214002: SwiftUI: Setting PreferredColorScheme to nil does not work in sheet.
-			// Workaround: Explicitly set environment colorScheme from outside of sheet.
-			.preferredColorScheme(colorScheme)
-			
-		})
+#endif
 		
 	}
 	

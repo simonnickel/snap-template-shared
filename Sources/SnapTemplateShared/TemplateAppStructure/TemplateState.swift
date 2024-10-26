@@ -26,8 +26,6 @@ public struct TemplateState {
 	
 	public var navigationLayout: NavigationLayout?
 	
-	public var navigationSplitSidebarVisibility: NavigationSplitViewVisibility = .all
-	
 	/// Accent selected in Settings.
 	public var accentColor: Theme.ColorSet?
 	
