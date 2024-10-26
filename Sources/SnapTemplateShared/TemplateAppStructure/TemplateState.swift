@@ -24,6 +24,7 @@ public struct TemplateState {
 	
 	public var interfaceScale: InterfaceScale?
 	
+	// TODO: Adapt navigation layout options in SnapNavigation.
 	public var navigationLayout: NavigationLayout?
 	
 	/// Accent selected in Settings.
