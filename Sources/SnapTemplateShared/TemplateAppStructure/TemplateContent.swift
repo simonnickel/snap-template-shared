@@ -15,10 +15,10 @@ public struct TemplateContent<NavigationProvider: SnapNavigationProvider>: View 
 	@Dependency private var navigator: Navigator
 	@Dependency private var templateState: TemplateState
 	
-	private let settingsScreen: NavigationProvider.Screen
+	private let settingsDestination: NavigationProvider.Destination
 	
-	public init(settingsScreen: NavigationProvider.Screen) {
-		self.settingsScreen = settingsScreen
+	public init(settingsDestination: NavigationProvider.Destination) {
+		self.settingsDestination = settingsDestination
 	}
 	
 	public var body: some View {
@@ -30,7 +30,9 @@ public struct TemplateContent<NavigationProvider: SnapNavigationProvider>: View 
 		.tabViewSidebarBottomBar {
 			HStack {
 				ToolbarButtonSettings {
-					navigator.present(screen: settingsScreen, style: .modal)
+					// TODO: Should work like this. SnapNavigation does not allow it yet though.
+//					navigator.navigate(to: settingsDestination)
+					navigator.present(destination: settingsDestination, style: .modal)
 				}
 				Spacer()
 			}
