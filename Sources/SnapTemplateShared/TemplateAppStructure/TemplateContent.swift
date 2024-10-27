@@ -38,9 +38,6 @@ public struct TemplateContent<NavigationProvider: SnapNavigationProvider>: View 
 #endif
 		.theme(apply: templateState.theme) // TODO: Check if updates are propagated.
 		.preferredColorScheme(templateState.displayMode?.colorScheme)
-//		.onChange(of: templateState.displayMode) { oldValue, newValue in
-//			
-//		}
 		
 	}
 	
