@@ -6,6 +6,7 @@
 import SwiftUI
 import SnapTheme
 import SnapSettingsService
+import SnapDependencies
 
 public protocol PickableSetting: Identifiable, Codable, Hashable, Sendable, CaseIterable where AllCases == Array<Self> {
 	
@@ -16,7 +17,7 @@ public protocol PickableSetting: Identifiable, Codable, Hashable, Sendable, Case
 
 public struct SettingsPicker<Setting: PickableSetting>: View {
 		
-	@Environment(\.serviceSettings) private var settings
+	@Dependency private var settings: SettingsService
 	
 	private let setting: SettingsService.Value<Setting>
 	

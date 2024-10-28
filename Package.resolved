@@ -1,5 +1,5 @@
 {
-  "originHash" : "1b1efa00e4f0da172a3d9e945a1a7684d44b4247f06e41af3f4aae582a22109d",
+  "originHash" : "74fdfa90090ea08d1cec9faa49c7a44e905aca67e4cfc4eec3d4a23888e8566f",
   "pins" : [
     {
       "identity" : "snap-core",
@@ -8,6 +8,15 @@
       "state" : {
         "branch" : "main",
         "revision" : "f1dc2e740961f5607c0271bc13ce6d56f00eff20"
+      }
+    },
+    {
+      "identity" : "snap-dependencies",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/simonnickel/snap-dependencies.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "297e7cbfc1de4bca09fe388daf905825d1514bc8"
       }
     },
     {
@@ -25,7 +34,7 @@
       "location" : "https://github.com/simonnickel/snap-navigation.git",
       "state" : {
         "branch" : "main",
-        "revision" : "5dd4a51b43966b5c55dade678dd9b4d8445e8261"
+        "revision" : "4dd50070eb6a12e8ef6240bdfdab4007128050ec"
       }
     },
     {

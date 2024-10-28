@@ -5,16 +5,18 @@
 
 import SwiftUI
 import SnapNavigation
+import SnapDependencies
+import SnapTheme
 	
 public struct TemplateContent<NavigationProvider: SnapNavigationProvider>: View {
 	
-	private let navigator: SnapNavigation.Navigator<NavigationProvider>
-	private let settingsScreen: NavigationProvider.Screen
+	typealias Navigator = SnapNavigation.Navigator<NavigationProvider>
 	
-	public init(provider: NavigationProvider, settingsScreen: NavigationProvider.Screen) {
-		self.navigator = SnapNavigation.Navigator(provider: provider)
-		self.settingsScreen = settingsScreen
-	}
+	@Dependency private var navigator: Navigator
+	@Dependency private var navigatorTemplateSettings: TemplateSettingsNavigator
+	@Dependency private var templateState: TemplateState
+	
+	public init() {}
 	
 	public var body: some View {
 		
@@ -25,12 +27,16 @@ public struct TemplateContent<NavigationProvider: SnapNavigationProvider>: View 
 		.tabViewSidebarBottomBar {
 			HStack {
 				ToolbarButtonSettings {
-					navigator.present(screen: settingsScreen, style: .modal)
+					// TODO: Should work like this. SnapNavigation does not allow it yet though.
+//					navigatorTemplateSettings.present(destination: .screen)
+					navigatorTemplateSettings.present(destination: .screen, style: .modal)
 				}
 				Spacer()
 			}
 		}
 #endif
+		.theme(apply: templateState.theme) // TODO: Check if updates are propagated.
+		.preferredColorScheme(templateState.displayMode?.colorScheme)
 		
 	}
 	

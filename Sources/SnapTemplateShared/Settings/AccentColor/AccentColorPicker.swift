@@ -6,6 +6,7 @@
 import SwiftUI
 import SnapTheme
 import SnapSettingsService
+import SnapDependencies
 
 // TODO: Wrap lines on dynamic type sizes
 
@@ -17,7 +18,7 @@ public struct AccentColorPicker: View {
 	
 	@Environment(\.theme) private var theme
 	@ScaledMetric private var scaleFactor: CGFloat = 1
-	@Environment(\.serviceSettings) private var settings
+	@Dependency private var settings: SettingsService
 	
 	private let setting: SettingsService.Value<Theme.ColorSet?>
 	private let defaultSetKey: Theme.ColorKey

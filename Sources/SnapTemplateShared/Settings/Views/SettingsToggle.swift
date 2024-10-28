@@ -7,10 +7,11 @@ import SwiftUI
 import SnapCore
 import SnapTheme
 import SnapSettingsService
+import SnapDependencies
 
 public struct SettingsToggle: View {
 		
-	@Environment(\.serviceSettings) private var settings
+	@Dependency private var settings: SettingsService
 	
 	private let title: String
 	
