@@ -13,13 +13,10 @@ public struct TemplateContent<NavigationProvider: SnapNavigationProvider>: View 
 	typealias Navigator = SnapNavigation.Navigator<NavigationProvider>
 	
 	@Dependency private var navigator: Navigator
+	@Dependency private var navigatorTemplateSettings: TemplateSettingsNavigator
 	@Dependency private var templateState: TemplateState
 	
-	private let settingsDestination: NavigationProvider.Destination
-	
-	public init(settingsDestination: NavigationProvider.Destination) {
-		self.settingsDestination = settingsDestination
-	}
+	public init() {}
 	
 	public var body: some View {
 		
@@ -31,8 +28,8 @@ public struct TemplateContent<NavigationProvider: SnapNavigationProvider>: View 
 			HStack {
 				ToolbarButtonSettings {
 					// TODO: Should work like this. SnapNavigation does not allow it yet though.
-//					navigator.navigate(to: settingsDestination)
-					navigator.present(destination: settingsDestination, style: .modal)
+//					navigatorTemplateSettings.present(destination: .screen)
+					navigatorTemplateSettings.present(destination: .screen, style: .modal)
 				}
 				Spacer()
 			}

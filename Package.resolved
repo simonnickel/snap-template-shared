@@ -16,7 +16,7 @@
       "location" : "https://github.com/simonnickel/snap-dependencies.git",
       "state" : {
         "branch" : "main",
-        "revision" : "6754a4b08ace4cb67db7c3779b57a5a7d82751a8"
+        "revision" : "297e7cbfc1de4bca09fe388daf905825d1514bc8"
       }
     },
     {
@@ -34,7 +34,7 @@
       "location" : "https://github.com/simonnickel/snap-navigation.git",
       "state" : {
         "branch" : "main",
-        "revision" : "5dd4a51b43966b5c55dade678dd9b4d8445e8261"
+        "revision" : "4dd50070eb6a12e8ef6240bdfdab4007128050ec"
       }
     },
     {

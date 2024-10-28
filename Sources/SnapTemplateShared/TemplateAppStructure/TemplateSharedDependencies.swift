@@ -7,7 +7,7 @@ import SnapDependencies
 import SnapSettingsService
 import SnapNavigation
 
-public struct TemplateDependencies {
+public enum TemplateSharedDependencies {
 	
 	public static func registerDependencies() {
 		
