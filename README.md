@@ -13,3 +13,5 @@ Contains shared code to use with the [snap-app-template](https://github.com/simo
 
 [documentation]: https://swiftpackageindex.com/simonnickel/snap-template-shared/main/documentation/snaptemplateshared
 [documentation badge]: https://img.shields.io/badge/Documentation-DocC-blue
+
+// TODO: Split into Targets: AppStructure, Settings, Views
