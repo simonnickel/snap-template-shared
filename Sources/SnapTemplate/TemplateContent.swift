@@ -3,11 +3,10 @@
 //  Created by Simon Nickel
 //
 
-import SwiftUI
-import SnapNavigation
 import SnapDependencies
-import SnapTheme
+import SnapNavigation
 import SnapTemplateSettings
+import SwiftUI
 	
 public struct TemplateContent<NavigationProvider: SnapNavigationProvider>: View {
 	

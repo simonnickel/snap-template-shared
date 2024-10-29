@@ -4,11 +4,11 @@
 //
 
 import Combine
-import SwiftUI
-import SnapTheme
 import SnapDependencies
 import SnapSettingsService
 import SnapTemplateSettings
+import SnapTheme
+import SwiftUI
 
 @Observable
 public class TemplateState {

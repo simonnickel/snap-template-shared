@@ -5,7 +5,6 @@
 
 import SnapDependencies
 import SnapSettingsService
-import SnapNavigation
 
 public enum TemplateDependencies {
 	
