@@ -14,7 +14,6 @@ public struct TemplateSettingsScreen: View {
 	
 	public init() {}
 	
-	@Dependency private var templateState: TemplateState
 	@Dependency private var settings: SettingsService
 	@Dependency private var navigator: TemplateSettingsNavigator
 	
@@ -73,8 +72,6 @@ public struct TemplateSettingsScreen: View {
 			}
 			
 		}
-		// TODO: Should come from TemplateContent, like Theme. Not sure why it does not work.
-		.preferredColorScheme(templateState.displayMode?.colorScheme)
 		
 	}
 	

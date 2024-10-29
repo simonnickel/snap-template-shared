@@ -7,6 +7,7 @@ import SwiftUI
 import SnapNavigation
 import SnapDependencies
 import SnapTheme
+import SnapTemplateSettings
 	
 public struct TemplateContent<NavigationProvider: SnapNavigationProvider>: View {
 	
@@ -26,11 +27,7 @@ public struct TemplateContent<NavigationProvider: SnapNavigationProvider>: View 
 #if !os(macOS) // macOS settings are available in the application menu.
 		.tabViewSidebarBottomBar {
 			HStack {
-				ToolbarButtonSettings {
-					// TODO: Should work like this. SnapNavigation does not allow it yet though.
-//					navigatorTemplateSettings.present(destination: .screen)
-					navigatorTemplateSettings.present(destination: .screen, style: .modal)
-				}
+				ToolbarButtonSettings()
 				Spacer()
 			}
 		}

@@ -8,6 +8,7 @@ import SwiftUI
 import SnapTheme
 import SnapDependencies
 import SnapSettingsService
+import SnapTemplateSettings
 
 @Observable
 public class TemplateState {

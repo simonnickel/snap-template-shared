@@ -5,20 +5,20 @@
 
 import SwiftUI
 import SnapTheme
+import SnapDependencies
 
 public struct ToolbarButtonSettings: View {
 	
-	public typealias Action = () -> Void
-	private let action: Action
+	@Dependency private var navigator: TemplateSettingsNavigator
 	
-	public init(action: @escaping Action) {
-		self.action = action
-	}
+	public init() {}
 	
 	public var body: some View {
 		
 		Button {
-			action()
+			// TODO: Should work like this. SnapNavigation does not allow it yet though.
+//					navigator.present(destination: .screen)
+			navigator.present(destination: .screen, style: .modal)
 		} label: {
 			ThemeLabel(
 				text: "Settings",

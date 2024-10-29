@@ -12,28 +12,39 @@ let package = Package(
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "SnapTemplateShared",
-            targets: ["SnapTemplateShared"]
+            targets: ["SnapTemplate", "SnapTemplateSettings"]
 		),
     ],
 	dependencies: [
 		// Dependencies declare other packages that this package depends on.
 		.package(url: "https://github.com/simonnickel/snap-core.git", branch: "main"),
-		.package(url: "https://github.com/simonnickel/snap-theme.git", branch: "main"),
-		.package(url: "https://github.com/simonnickel/snap-settings-service.git", branch: "main"),
-		.package(url: "https://github.com/simonnickel/snap-navigation.git", branch: "main"),
 		.package(url: "https://github.com/simonnickel/snap-dependencies.git", branch: "main"),
+		.package(url: "https://github.com/simonnickel/snap-navigation.git", branch: "main"),
+		.package(url: "https://github.com/simonnickel/snap-settings-service.git", branch: "main"),
+		.package(url: "https://github.com/simonnickel/snap-theme.git", branch: "main"),
 	],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
 		// Targets can depend on other targets in this package and products from dependencies.
 		.target(
-			name: "SnapTemplateShared",
+			name: "SnapTemplate",
+			dependencies: [
+				"SnapTemplateSettings",
+				.product(name: "SnapCore", package: "snap-core"),
+				.product(name: "SnapDependencies", package: "snap-dependencies"),
+				.product(name: "SnapNavigation", package: "snap-navigation"),
+				.product(name: "SnapSettingsService", package: "snap-settings-service"),
+				.product(name: "SnapTheme", package: "snap-theme"),
+			]
+		),
+		.target(
+			name: "SnapTemplateSettings",
 			dependencies: [
 				.product(name: "SnapCore", package: "snap-core"),
-				.product(name: "SnapTheme", package: "snap-theme"),
-				.product(name: "SnapSettingsService", package: "snap-settings-service"),
-				.product(name: "SnapNavigation", package: "snap-navigation"),
 				.product(name: "SnapDependencies", package: "snap-dependencies"),
+				.product(name: "SnapNavigation", package: "snap-navigation"),
+				.product(name: "SnapSettingsService", package: "snap-settings-service"),
+				.product(name: "SnapTheme", package: "snap-theme"),
 			]
 		),
     ],
