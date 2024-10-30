@@ -8,15 +8,15 @@ import SnapNavigation
 import SnapTemplateSettings
 import SwiftUI
 	
-public struct TemplateContent<NavigationProvider: SnapNavigationProvider>: View {
+public struct TemplateContent<Navigator: SnapNavigation.Navigator<NavigationProvider>, NavigationProvider: SnapNavigationProvider>: View {
 	
-	typealias Navigator = SnapNavigation.Navigator<NavigationProvider>
+	@Dependency(\.templateState) private var templateState: TemplateState
 	
-	@Dependency private var navigator: Navigator
-	@Dependency private var navigatorTemplateSettings: TemplateSettingsNavigator
-	@Dependency private var templateState: TemplateState
+	private let navigator: Navigator
 	
-	public init() {}
+	public init(navigator: Navigator) {
+		self.navigator = navigator
+	}
 	
 	public var body: some View {
 		

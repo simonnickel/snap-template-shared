@@ -11,7 +11,7 @@ import SnapDependencies
 
 public struct SettingsToggle: View {
 		
-	@Dependency private var settings: SettingsService
+	@Dependency(\.settingsService) private var settings
 	
 	private let title: String
 	

@@ -18,7 +18,8 @@ public struct AccentColorPicker: View {
 	
 	@Environment(\.theme) private var theme
 	@ScaledMetric private var scaleFactor: CGFloat = 1
-	@Dependency private var settings: SettingsService
+	
+	@Dependency(\.settingsService) private var settings
 	
 	private let setting: SettingsService.Value<Theme.ColorSet?>
 	private let defaultSetKey: Theme.ColorKey

@@ -10,7 +10,7 @@ import SnapDependencies
 
 public struct ConfigureTabsScreen: View {
 	
-	@Dependency private var settings: SettingsService
+	@Dependency(\.settingsService) private var settings
 
 	private let defaultConfiguration: TabConfiguration
 

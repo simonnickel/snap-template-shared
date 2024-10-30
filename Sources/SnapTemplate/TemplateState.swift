@@ -14,7 +14,7 @@ import SwiftUI
 public class TemplateState {
 	
 	@ObservationIgnored
-	@Dependency private var settings: SettingsService
+	@Dependency(\.settingsService) private var settings
 
 	/// Overrides the system color scheme (dark / light) for the `AppContainer`, propagates up the view hierarchy using .preferredColorScheme.
 	public var displayMode: DisplayMode?

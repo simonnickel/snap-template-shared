@@ -9,7 +9,7 @@ import SnapDependencies
 
 public struct ToolbarButtonSettings: View {
 	
-	@Dependency private var navigator: TemplateSettingsNavigator
+	@Dependency(\.templateSettingsNavigator) private var navigator
 	
 	public init() {}
 	
