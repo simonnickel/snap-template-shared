@@ -10,16 +10,16 @@ import SwiftUI
 
 public extension View {
 	
-	func setupTemplateConfig<Destination: SnapNavigationDestination, SidebarModifier: ViewModifier>(
-		for scene: SnapNavigation.NavigationScene<Destination>,
+	func templateSetupScene<Destination: SnapNavigationDestination, SidebarModifier: ViewModifier>(
+		_ scene: SnapNavigation.NavigationScene<Destination>,
 		sidebarModifier: SidebarModifier
 	) -> some View {
-		modifier(TemplateContentSetupModifier<Destination, SidebarModifier>(scene: scene, sidebarModifier: sidebarModifier))
+		modifier(TemplateSetupSceneModifier<Destination, SidebarModifier>(scene: scene, sidebarModifier: sidebarModifier))
 	}
 	
 }
 
-internal struct TemplateContentSetupModifier<Destination: SnapNavigationDestination, SidebarModifier: ViewModifier> : ViewModifier {
+internal struct TemplateSetupSceneModifier<Destination: SnapNavigationDestination, SidebarModifier: ViewModifier> : ViewModifier {
 
 	@Dependency(\.templateState) private var templateState: TemplateState
 	
