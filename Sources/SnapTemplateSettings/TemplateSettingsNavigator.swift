@@ -4,6 +4,7 @@
 //
 
 import SnapNavigation
+import SwiftUI
 
 public protocol TemplateSettingsNavigator {
 	
@@ -14,5 +15,25 @@ public protocol TemplateSettingsNavigator {
 	
 	@MainActor
 	func present(destination: Destination, style styleOverride: SnapNavigation.PresentationStyle?)
+	
+}
+
+private struct TemplateSettingsNavigatorEnvironmentGuard: TemplateSettingsNavigator {
+	func navigate(to destination: Destination) {
+		fatalError("TemplateSettingsNavigator not available.")
+	}
+	
+	func present(destination: Destination, style styleOverride: SnapNavigation.PresentationStyle?) {
+		fatalError("TemplateSettingsNavigator not available.")
+	}
+	
+	
+}
+
+// MARK: - Environment
+
+public extension EnvironmentValues {
+	
+	@Entry var navigatorSettings: TemplateSettingsNavigator = TemplateSettingsNavigatorEnvironmentGuard()
 	
 }

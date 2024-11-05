@@ -10,7 +10,4 @@ public extension Dependencies {
 
 	var settingsService: SettingsService { SettingsService() }
 	
-	/// Defined in `SnapTemplateSettings`, but has to be setup from App.
-	var templateSettingsNavigator: TemplateSettingsNavigator { Dependencies.forwarding(for: \.templateSettingsNavigator) }
-
 }

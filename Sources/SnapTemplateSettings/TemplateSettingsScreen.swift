@@ -15,7 +15,8 @@ public struct TemplateSettingsScreen: View {
 	public init() {}
 	
 	@Dependency(\.settingsService) private var settings
-	@Dependency(\.templateSettingsNavigator) private var navigator
+	
+	@Environment(\.navigatorSettings) private var navigator
 	
 	// TODO: Does not work anymore. See comment below
 	private let navSelectionState = ListNavState<TemplateSettingsDestination>()
