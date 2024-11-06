@@ -8,25 +8,19 @@ import SnapNavigation
 import SnapTemplateSettings
 import SwiftUI
 
-public extension View {
-	
-	func templateSetupScene<Destination: SnapNavigationDestination, SidebarModifier: ViewModifier>(
-		_ scene: SnapNavigation.NavigationScene<Destination>,
-		sidebarModifier: SidebarModifier
-	) -> some View {
-		modifier(TemplateSetupSceneModifier<Destination, SidebarModifier>(scene: scene, sidebarModifier: sidebarModifier))
-	}
-	
-}
-
-internal struct TemplateSetupSceneModifier<Destination: SnapNavigationDestination, SidebarModifier: ViewModifier> : ViewModifier {
+public struct TemplateModifierScene<Destination: SnapNavigationDestination, SidebarModifier: ViewModifier> : ViewModifier {
 
 	@Dependency(\.templateState) private var templateState: TemplateState
 	
-	let scene: SnapNavigation.NavigationScene<Destination>
-	let sidebarModifier: SidebarModifier
+	private let scene: SnapNavigation.NavigationScene<Destination>
+	private let sidebarModifier: SidebarModifier
 	
-	internal func body(content: Content) -> some View {
+	public init(scene: SnapNavigation.NavigationScene<Destination>, sidebarModifier: SidebarModifier) {
+		self.scene = scene
+		self.sidebarModifier = sidebarModifier
+	}
+	
+	public func body(content: Content) -> some View {
 		content
 			.navigationStyle(scene == .main ? .tabsAdaptable : nil) // TODO: Style from settings
 			.theme(apply: templateState.theme) // TODO: Check if updates are propagated.
