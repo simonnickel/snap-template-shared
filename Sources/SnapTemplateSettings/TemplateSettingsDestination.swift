@@ -8,6 +8,8 @@ import SnapNavigation
 import SnapTheme
 import SnapSettingsService
 
+typealias Navigator = SnapNavigation.NavigatorTranslator
+
 // TODO: Is Codable really needed?
 public enum TemplateSettingsDestination: SnapNavigationDestination, Codable {
 	

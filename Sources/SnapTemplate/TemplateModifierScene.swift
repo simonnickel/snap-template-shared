@@ -8,16 +8,14 @@ import SnapNavigation
 import SnapTemplateSettings
 import SwiftUI
 
-public struct TemplateModifierScene<Destination: SnapNavigationDestination, SidebarModifier: ViewModifier> : ViewModifier {
+public struct TemplateModifierScene<Destination: SnapNavigationDestination> : ViewModifier {
 
 	@Dependency(\.templateState) private var templateState: TemplateState
 	
 	private let scene: SnapNavigation.NavigationScene<Destination>
-	private let sidebarModifier: SidebarModifier
 	
-	public init(scene: SnapNavigation.NavigationScene<Destination>, sidebarModifier: SidebarModifier) {
+	public init(scene: SnapNavigation.NavigationScene<Destination>) {
 		self.scene = scene
-		self.sidebarModifier = sidebarModifier
 	}
 	
 	public func body(content: Content) -> some View {
@@ -31,7 +29,6 @@ public struct TemplateModifierScene<Destination: SnapNavigationDestination, Side
 					ToolbarButtonSettings()
 					Spacer()
 				}
-				.modifier(sidebarModifier)
 			}
 #endif
 	}

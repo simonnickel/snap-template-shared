@@ -4,13 +4,14 @@
 //
 
 import SwiftUI
-import SnapTheme
 import SnapDependencies
+import SnapNavigation
+import SnapTheme
 
 public struct ToolbarButtonSettings: View {
 	
-	@Environment(\.navigatorSettings) private var navigator
-	
+	@Environment(Navigator.self) private var navigator
+
 	public init() {}
 	
 	public var body: some View {
@@ -18,7 +19,7 @@ public struct ToolbarButtonSettings: View {
 		Button {
 			// TODO: Should work like this. SnapNavigation does not allow it yet though.
 //					navigator.present(destination: .screen)
-			navigator.present(destination: .screen, style: .modal)
+			navigator.present(destination: TemplateSettingsDestination.screen, style: .modal)
 		} label: {
 			ThemeLabel(
 				text: "Settings",
