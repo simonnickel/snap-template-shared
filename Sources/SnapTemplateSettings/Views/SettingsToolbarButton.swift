@@ -17,9 +17,7 @@ public struct ToolbarButtonSettings: View {
 	public var body: some View {
 		
 		Button {
-			// TODO: Should work like this. SnapNavigation does not allow it yet though.
-//					navigator.present(destination: .screen)
-			navigator.present(destination: TemplateSettingsDestination.screen, style: .modal)
+			navigator.present(destination: TemplateSettingsDestination.screen)
 		} label: {
 			ThemeLabel(
 				text: "Settings",
