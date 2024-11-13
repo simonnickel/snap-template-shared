@@ -8,8 +8,6 @@ import SnapNavigation
 import SnapTheme
 import SnapSettingsService
 
-typealias Navigator = SnapNavigation.NavigatorTranslator
-
 public enum TemplateSettingsDestination: SnapNavigationDestination {
 	
 	case screen

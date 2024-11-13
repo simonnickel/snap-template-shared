@@ -29,21 +29,30 @@ let package = Package(
 		.target(
 			name: "SnapTemplate",
 			dependencies: [
-				"SnapTemplateSettings",
-				.product(name: "SnapCore", package: "snap-core"),
-				.product(name: "SnapDependencies", package: "snap-dependencies"),
-				.product(name: "SnapNavigation", package: "snap-navigation"),
-				.product(name: "SnapSettingsService", package: "snap-settings-service"),
-				.product(name: "SnapTheme", package: "snap-theme"),
-			]
-		),
+                "SnapTemplateShared",
+                "SnapTemplateSettings",
+                .product(name: "SnapCore", package: "snap-core"),
+                .product(name: "SnapDependencies", package: "snap-dependencies"),
+                .product(name: "SnapNavigation", package: "snap-navigation"),
+                .product(name: "SnapSettingsService", package: "snap-settings-service"),
+                .product(name: "SnapTheme", package: "snap-theme"),
+            ]
+        ),
+        .target(
+            name: "SnapTemplateSettings",
+            dependencies: [
+                "SnapTemplateShared",
+                .product(name: "SnapCore", package: "snap-core"),
+                .product(name: "SnapDependencies", package: "snap-dependencies"),
+                .product(name: "SnapNavigation", package: "snap-navigation"),
+                .product(name: "SnapSettingsService", package: "snap-settings-service"),
+                .product(name: "SnapTheme", package: "snap-theme"),
+            ]
+        ),
 		.target(
-			name: "SnapTemplateSettings",
+			name: "SnapTemplateShared",
 			dependencies: [
-				.product(name: "SnapCore", package: "snap-core"),
-				.product(name: "SnapDependencies", package: "snap-dependencies"),
 				.product(name: "SnapNavigation", package: "snap-navigation"),
-				.product(name: "SnapSettingsService", package: "snap-settings-service"),
 				.product(name: "SnapTheme", package: "snap-theme"),
 			]
 		),

@@ -10,7 +10,7 @@ import SnapTheme
 
 public struct ToolbarButtonSettings: View {
 	
-	@Environment(Navigator.self) private var navigator
+    @Environment(NavigatorSettings.self) private var navigator
 
 	public init() {}
 	

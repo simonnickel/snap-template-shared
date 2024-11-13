@@ -17,8 +17,6 @@ public struct TemplateSettingsScreen: View {
 	
 	@Dependency(\.settingsService) private var settings
 	
-	@Environment(Navigator.self) private var navigator
-	
 	// TODO: Does not work anymore. See comment below
 	private let navSelectionState = ListNavState<TemplateSettingsDestination>()
 	
@@ -56,14 +54,7 @@ public struct TemplateSettingsScreen: View {
 					SettingsPicker(setting: settings.value(.navigationLayout))
 				}
 				
-				// TODO: .themeListRow() can not maintain selection state without navSelectionState. Should be handled by Navigator.
-				// TODO: Button does not have disclosure indicator
-				Button {
-					navigator.present(destination: TemplateSettingsDestination.tabs, style: .push)
-				} label: {
-					ThemeLabel(text: "Configure Tab Bar", style: .themeListRow())
-				}
-//				.themeListRow(isSelected: true)
+                NavigatorSettings.ListRow(destination: TemplateSettingsDestination.tabs)
 
 				ThemeListRowNavigationLink(value: TemplateSettingsDestination.tabs, state: navSelectionState) {
 					ThemeLabel(text: "Configure Tab Bar", style: .themeListRow())
