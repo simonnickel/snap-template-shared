@@ -10,8 +10,7 @@ import SnapSettingsService
 
 typealias Navigator = SnapNavigation.NavigatorTranslator
 
-// TODO: Is Codable really needed?
-public enum TemplateSettingsDestination: SnapNavigationDestination, Codable {
+public enum TemplateSettingsDestination: SnapNavigationDestination {
 	
 	case screen
 	case tabs
