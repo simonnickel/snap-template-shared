@@ -7,32 +7,26 @@ import SnapNavigation
 import SnapTheme
 import SwiftUI
 
-extension SnapNavigation {
+/// Combining `SnapNavigation` with `SnapTheme` to provide a themed `NavigationLink` (it's a Button) to use in a `List`.
+public struct TemplateListRow<Destination: SnapNavigationDestination>: View {
     
-    // TODO: This needs to be exposed to user of SnapTemplate
+    @Environment(\.navigator) private var navigator
+    @Environment(\.isPresentingDestination) private var isPresentingDestination
     
-    /// Combining `SnapNavigation` with `SnapTheme` to provide a themed `NavigationLink` (it's a Button) to use in a `List`.
-    public struct ListRow<Destination: SnapNavigationDestination>: View {
-        
-        @Environment(\.navigator) private var navigator
-        @Environment(\.isPresentingDestination) private var isPresentingDestination
-        
-        private let destination: Destination
-
-        package init(destination: Destination) {
-            self.destination = destination
+    private let destination: Destination
+    
+    public init(destination: Destination) {
+        self.destination = destination
+    }
+    
+    public var body: some View {
+        Button {
+            navigator(.present(destination, style: .push))
+        } label: {
+            AnyView(destination.definition.label
+                .labelStyle(.themeListRow()))
         }
-        
-        public var body: some View {
-            Button {
-                navigator(.present(destination, style: .push))
-            } label: {
-                AnyView(destination.definition.label
-                    .labelStyle(.themeListRow()))
-            }
-            .themeListRow(isSelected: isPresentingDestination(destination))
-        }
-        
+        .themeListRow(isSelected: isPresentingDestination(destination))
     }
     
 }
