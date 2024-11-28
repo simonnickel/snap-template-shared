@@ -12,15 +12,15 @@ public struct TemplateModifierScene<Destination: SnapNavigationDestination> : Vi
 
 	@Dependency(\.templateState) private var templateState: TemplateState
 	
-	private let scene: SnapNavigation.NavigationScene<Destination>
+	private let window: SnapNavigation.Window<Destination>
 	
-	public init(scene: SnapNavigation.NavigationScene<Destination>) {
-		self.scene = scene
+	public init(window: SnapNavigation.Window<Destination>) {
+		self.window = window
 	}
 	
 	public func body(content: Content) -> some View {
 		content
-			.navigationStyle(scene == .main ? .tabsAdaptable : nil) // TODO: Style from settings
+			.navigationStyle(window == .main ? .tabsAdaptable : nil) // TODO: Style from settings
 			.theme(apply: templateState.theme) // TODO: Check if updates are propagated.
 			.preferredColorScheme(templateState.displayMode?.colorScheme)
 #if !os(macOS) // macOS settings are available in the application menu.

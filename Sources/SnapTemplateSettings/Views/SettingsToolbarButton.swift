@@ -10,14 +10,14 @@ import SnapTheme
 
 public struct ToolbarButtonSettings: View {
 	
-    @Environment(NavigatorSettings.self) private var navigator
+    @Environment(\.navigator) private var navigator
 
 	public init() {}
 	
 	public var body: some View {
 		
 		Button {
-			navigator.present(destination: TemplateSettingsDestination.screen)
+			navigator(.present(TemplateSettingsDestination.screen))
 		} label: {
 			ThemeLabel(
 				text: "Settings",

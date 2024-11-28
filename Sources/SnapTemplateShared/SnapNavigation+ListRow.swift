@@ -9,22 +9,23 @@ import SwiftUI
 
 extension SnapNavigation {
     
+    // TODO: This needs to be exposed to user of SnapTemplate
+    
     /// Combining `SnapNavigation` with `SnapTheme` to provide a themed `NavigationLink` (it's a Button) to use in a `List`.
-    package struct DestinationListRow<Destination: SnapNavigationDestination>: View {
+    public struct ListRow<Destination: SnapNavigationDestination>: View {
         
+        @Environment(\.navigator) private var navigator
         @Environment(\.isPresentingDestination) private var isPresentingDestination
         
         private let destination: Destination
-        private let navigate: () -> Void
 
-        package init(destination: Destination, navigate: @escaping () -> Void) {
+        package init(destination: Destination) {
             self.destination = destination
-            self.navigate = navigate
         }
         
-        package var body: some View {
+        public var body: some View {
             Button {
-                navigate()
+                navigator(.present(destination, style: .push))
             } label: {
                 AnyView(destination.definition.label
                     .labelStyle(.themeListRow()))

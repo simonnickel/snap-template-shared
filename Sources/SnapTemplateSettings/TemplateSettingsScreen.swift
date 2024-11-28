@@ -8,6 +8,7 @@ import SnapTheme
 import SnapDependencies
 import SnapNavigation
 import SnapSettingsService
+import SnapTemplateShared
 
 // TODO Localization
 
@@ -54,7 +55,7 @@ public struct TemplateSettingsScreen: View {
 					SettingsPicker(setting: settings.value(.navigationLayout))
 				}
 				
-                NavigatorSettings.ListRow(destination: TemplateSettingsDestination.tabs)
+                SnapNavigation.ListRow(destination: TemplateSettingsDestination.tabs)
 
 				ThemeListRowNavigationLink(value: TemplateSettingsDestination.tabs, state: navSelectionState) {
 					ThemeLabel(text: "Configure Tab Bar", style: .themeListRow())

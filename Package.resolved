@@ -1,5 +1,5 @@
 {
-  "originHash" : "c62c97028a71b103dfff6600e4dff1c532c338dd6f452fc353dd7a74fe6ee8e1",
+  "originHash" : "343231d2c8d0cdbedb6fd2dde74bfcaf088b846308ff67714d7b92aa20a4bdc4",
   "pins" : [
     {
       "identity" : "snap-core",
@@ -34,7 +34,7 @@
       "location" : "https://github.com/simonnickel/snap-navigation.git",
       "state" : {
         "branch" : "main",
-        "revision" : "37816bec840c26be8eda351818a6cb55c6612654"
+        "revision" : "d4e26205630c37fc00c30ae0b24c2f6e9937b725"
       }
     },
     {
