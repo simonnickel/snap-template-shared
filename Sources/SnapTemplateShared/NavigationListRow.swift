@@ -3,13 +3,15 @@
 //  Created by Simon Nickel
 //
 
-import SnapTemplateShared
 import SnapNavigation
+import SnapTheme
 import SwiftUI
 
 /// Combining `SnapNavigation` with `SnapTheme` to provide a themed `NavigationLink` (it's a Button) to use in a `List`.
-/// Forwards to internal
 public struct NavigationListRow<Destination: SnapNavigationDestination>: View {
+    
+    @Environment(\.navigator) private var navigator
+    @Environment(\.isPresentingDestination) private var isPresentingDestination
     
     private let destination: Destination
     
@@ -18,7 +20,13 @@ public struct NavigationListRow<Destination: SnapNavigationDestination>: View {
     }
     
     public var body: some View {
-        TemplateListRow(destination: destination)
+        Button {
+            navigator(.present(destination, style: .push))
+        } label: {
+            AnyView(destination.definition.label
+                .labelStyle(.themeListRow()))
+        }
+        .themeListRow(isSelected: isPresentingDestination(destination))
     }
     
 }
