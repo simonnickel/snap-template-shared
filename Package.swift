@@ -12,7 +12,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "SnapTemplate",
-            targets: ["SnapTemplate", "SnapTemplateSettings"]
+            targets: ["SnapTemplateApp", "SnapTemplateSettings", "SnapTemplateUtil"]
 		),
     ],
 	dependencies: [
@@ -27,9 +27,8 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
 		// Targets can depend on other targets in this package and products from dependencies.
 		.target(
-			name: "SnapTemplate",
+			name: "SnapTemplateApp",
 			dependencies: [
-                "SnapTemplateShared",
                 "SnapTemplateSettings",
                 .product(name: "SnapCore", package: "snap-core"),
                 .product(name: "SnapDependencies", package: "snap-dependencies"),
@@ -41,7 +40,7 @@ let package = Package(
         .target(
             name: "SnapTemplateSettings",
             dependencies: [
-                "SnapTemplateShared",
+                "SnapTemplateUtil",
                 .product(name: "SnapCore", package: "snap-core"),
                 .product(name: "SnapDependencies", package: "snap-dependencies"),
                 .product(name: "SnapNavigation", package: "snap-navigation"),
@@ -50,7 +49,7 @@ let package = Package(
             ]
         ),
 		.target(
-			name: "SnapTemplateShared",
+			name: "SnapTemplateUtil",
 			dependencies: [
 				.product(name: "SnapNavigation", package: "snap-navigation"),
 				.product(name: "SnapTheme", package: "snap-theme"),

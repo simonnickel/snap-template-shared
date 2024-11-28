@@ -3,12 +3,12 @@
 //  Created by Simon Nickel
 //
 
-import SwiftUI
-import SnapTheme
 import SnapDependencies
 import SnapNavigation
 import SnapSettingsService
-import SnapTemplateShared
+import SnapTemplateUtil
+import SnapTheme
+import SwiftUI
 
 // TODO Localization
 
