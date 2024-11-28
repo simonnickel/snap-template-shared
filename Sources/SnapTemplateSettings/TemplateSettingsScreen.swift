@@ -55,7 +55,7 @@ public struct TemplateSettingsScreen: View {
 					SettingsPicker(setting: settings.value(.navigationLayout))
 				}
 				
-                TemplateListRow(destination: TemplateSettingsDestination.tabs)
+                NavigationListRow(destination: TemplateSettingsDestination.tabs)
 
 				ThemeListRowNavigationLink(value: TemplateSettingsDestination.tabs, state: navSelectionState) {
 					ThemeLabel(text: "Configure Tab Bar", style: .themeListRow())
