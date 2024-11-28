@@ -1,0 +1,60 @@
+{
+  "originHash" : "f1e41b49ad9b9e0b2726d8b84f3389d4dcab0cb765afe9726a231862f04cc048",
+  "pins" : [
+    {
+      "identity" : "snap-core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/simonnickel/snap-core.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f1dc2e740961f5607c0271bc13ce6d56f00eff20"
+      }
+    },
+    {
+      "identity" : "snap-dependencies",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/simonnickel/snap-dependencies.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "8e630afd1748f4743cf288e3c02489d68a46c515"
+      }
+    },
+    {
+      "identity" : "snap-foundation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/simonnickel/snap-foundation.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "cb8215eddb71ab7af8d60c333e73ed720fdd92d7"
+      }
+    },
+    {
+      "identity" : "snap-navigation",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/simonnickel/snap-navigation.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "987b6d4a66cee8a643f6c45363898937df17a561"
+      }
+    },
+    {
+      "identity" : "snap-settings-service",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/simonnickel/snap-settings-service.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a35bba11b85370f54c2a536532c40c3af65d1d43"
+      }
+    },
+    {
+      "identity" : "snap-theme",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/simonnickel/snap-theme.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "88f40defbb3a197f6b200e7f82e44c4770c5ff2f"
+      }
+    }
+  ],
+  "version" : 3
+}
