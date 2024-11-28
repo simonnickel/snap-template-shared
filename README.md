@@ -7,7 +7,7 @@
 
 # SnapTemplate
 
-Contains shared code and Demp Xcode project to setup and use SNAP in an App. 
+Contains shared code and Demo Xcode project to setup and use SNAP in an App. 
 
 [![Documentation][documentation badge]][documentation] 
 
