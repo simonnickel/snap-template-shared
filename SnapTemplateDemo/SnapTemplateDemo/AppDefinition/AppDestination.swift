@@ -23,8 +23,8 @@ enum AppDestination: SnapNavigationDestination {
 	var definition: SnapNavigation.ScreenDefinition {
 		switch self {
 			case .rectangle: .init(title: "Rectangle", icon: Theme.IconKey.navGroupRectangle)
-			case .rectangleA: .init(title: "Rectangle A", icon: Theme.IconKey.navGroupRectangle.id)
-			case .rectangleB: .init(title: "Rectangle B", icon: Theme.IconKey.navGroupRectangle.id)
+			case .rectangleA: .init(title: "Rectangle A", icon: Theme.IconKey.navGroupRectangle)
+			case .rectangleB: .init(title: "Rectangle B", icon: Theme.IconKey.navGroupRectangle)
 				
 			case .circle: .init(title: "Circle", icon: Theme.IconKey.navGroupCircle)
 			case .circleA: .init(title: "Circle A", icon: Theme.IconKey.navGroupCircle)

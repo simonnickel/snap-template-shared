@@ -11,9 +11,12 @@ import SwiftUI
 public struct NavigationListRow<Destination: SnapNavigationDestination>: View {
     
     @Environment(\.navigator) private var navigator
+    @Environment(\.navigationState) private var navigationState
     @Environment(\.isPresentingDestination) private var isPresentingDestination
     
     private let destination: Destination
+    
+    @State private var isActive: Bool = false
     
     public init(destination: Destination) {
         self.destination = destination
@@ -23,10 +26,13 @@ public struct NavigationListRow<Destination: SnapNavigationDestination>: View {
         Button {
             navigator(.present(destination, style: .push))
         } label: {
-            AnyView(destination.definition.label
-                .labelStyle(.themeListRow()))
+            ThemeLabel(text: destination.definition.title, icon: destination.icon)
+                .labelStyle(.themeListRow())
         }
-        .themeListRow(isSelected: isPresentingDestination(destination))
+        .onChange(of: navigationState) { _, _ in
+            isActive = isPresentingDestination(destination)
+        }
+        .themeListRow(isSelected: isActive)
     }
     
 }
