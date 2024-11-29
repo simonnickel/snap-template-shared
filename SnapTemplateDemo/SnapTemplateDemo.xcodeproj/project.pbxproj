@@ -64,7 +64,6 @@
 			children = (
 				1FF20B6D2C73DED600660878 /* README.md */,
 				5A1EEAC82BCD471300422FD8 /* SnapTemplateDemo */,
-				5A299EFC2CF923E3001B3E82 /* Frameworks */,
 				5A1EEAC72BCD471300422FD8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,13 +88,6 @@
 				5A08041E2CD026E7004680B3 /* Project Files */,
 			);
 			path = SnapTemplateDemo;
-			sourceTree = "<group>";
-		};
-		5A299EFC2CF923E3001B3E82 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
