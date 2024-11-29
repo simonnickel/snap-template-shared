@@ -1,5 +1,5 @@
 {
-  "originHash" : "f1e41b49ad9b9e0b2726d8b84f3389d4dcab0cb765afe9726a231862f04cc048",
+  "originHash" : "07531678cecb4efa3b45eec1c41226a8ded4e2ebd0abc9821495b426af6ff864",
   "pins" : [
     {
       "identity" : "snap-core",
@@ -34,7 +34,7 @@
       "location" : "https://github.com/simonnickel/snap-navigation.git",
       "state" : {
         "branch" : "main",
-        "revision" : "987b6d4a66cee8a643f6c45363898937df17a561"
+        "revision" : "e4fd7607b71f8fa5f291ef0ea1ab56eedc32b254"
       }
     },
     {
@@ -44,6 +44,15 @@
       "state" : {
         "branch" : "main",
         "revision" : "a35bba11b85370f54c2a536532c40c3af65d1d43"
+      }
+    },
+    {
+      "identity" : "snap-swift-data",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/simonnickel/snap-swift-data",
+      "state" : {
+        "branch" : "main",
+        "revision" : "76e913641443d6b262c25d77b5fc8c8934c30a90"
       }
     },
     {
